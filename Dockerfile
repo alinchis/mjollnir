@@ -9,5 +9,5 @@ RUN /opt/julia/bin/julia -e 'Pkg.add("Escher")'
 
 RUN ln -s ~/.julia/v0.4/Escher/bin/escher /usr/local/bin/
 
-ENTRYPOINT ["julia"]
-CMD [""]
+
+CMD ["/bin/bash"]
