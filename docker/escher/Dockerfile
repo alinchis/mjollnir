@@ -1,27 +1,33 @@
-FROM julialang/julia:v0.4.5
+# chose starting image @ debian:jessie + julia:v0.4.5
+FROM julia:latest
 
-MAINTAINER Alin CHIS
+MAINTAINER Alin CHIS <alin.d.chis@gmail.com>
 
-#RUN /opt/julia/bin/julia -e 'Pkg.update()'
-#RUN /opt/julia/bin/julia -e 'Pkg.add("Redis")'
-#RUN /opt/julia/bin/julia -e 'Pkg.add("ODBC")'
-RUN /opt/julia/bin/julia -e 'Pkg.add("Escher")'
+# add cmake - required to build Escher
+RUN apt-get update && apt-get install -y cmake && apt-get clean
 
+# add julia packages
+RUN /usr/local/julia/bin/julia -e 'Pkg.update()'
+RUN /usr/local/julia/bin/julia -e 'Pkg.add("Redis")'
+RUN /usr/local/julia/bin/julia -e 'Pkg.add("ODBC")'
+RUN /usr/local/julia/bin/julia -e 'Pkg.add("Escher")'
+
+# julia environment variables
 ENV JULIA_VER v0.4
 ENV JULIA_PKG_DIR /root/.julia/${JULIA_VER}
 
+# add symlinks to escher and julia
 RUN ln -s ${JULIA_PKG_DIR}/Escher/bin/escher /usr/local/bin/
-
-# test #
 RUN ln -s ${JULIA_PKG_DIR}/Escher/bin/escher /usr/bin/escher
-# RUN rm /usr/bin/julia
-RUN ln -fs /opt/julia/bin/julia /usr/bin/julia
+RUN ln -fs /usr/local/julia/bin/julia /usr/bin/julia
 
-########
-
+# expose port
 EXPOSE 5555
 
-WORKDIR ${JULIA_PKG_DIR}/Escher/examples
+# set work directory
+# WORKDIR ${JULIA_PKG_DIR}/Escher/examples
+WORKDIR /root/Git/mjollnir
 
-#ENTRYPOINT ["escher"]
-CMD ["escher --serve"]
+# set run command for container
+ENTRYPOINT ["escher"]
+CMD ["--serve"]
