@@ -1,4 +1,4 @@
-# chose starting image @ debian:jessie + julia:v0.4.5
+# choose starting image @ debian:jessie + julia:v0.4.5
 FROM julia:latest
 
 MAINTAINER Alin CHIS <alin.d.chis@gmail.com>
@@ -11,6 +11,8 @@ RUN /usr/local/julia/bin/julia -e 'Pkg.update()'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("Redis")'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("ODBC")'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("Escher")'
+RUN /usr/local/julia/bin/julia -e 'Pkg.add("Gadfly")'
+RUN /usr/local/julia/bin/julia -e 'Pkg.add("ComposeDiff")'
 
 # julia environment variables
 ENV JULIA_VER v0.4
@@ -21,12 +23,12 @@ RUN ln -s ${JULIA_PKG_DIR}/Escher/bin/escher /usr/local/bin/
 RUN ln -s ${JULIA_PKG_DIR}/Escher/bin/escher /usr/bin/escher
 RUN ln -fs /usr/local/julia/bin/julia /usr/bin/julia
 
-# expose port
+# expose private port
 EXPOSE 5555
 
 # set work directory
-# WORKDIR ${JULIA_PKG_DIR}/Escher/examples
-WORKDIR /root/Git/mjollnir
+WORKDIR ${JULIA_PKG_DIR}/Escher/examples
+#WORKDIR /root/Git/mjollnir
 
 # set run command for container
 ENTRYPOINT ["escher"]
