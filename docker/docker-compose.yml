@@ -4,15 +4,18 @@ services:
     build: ./escher
     volumes:
       - ~/Git/mjollnir:/root/Git/mjollnir
-    working_dir: /root/Git/mjollnir/docker/escher
+    working_dir: /root/Git/mjollnir/code
     command: escher --serve
     ports:
       - 5555:5555
-
+    links:
+      - docker
 
   docker:
     image: docker
     volumes:
       - ~/Git/mjollnir:/root/Git/mjollnir
       - /var/run/docker.sock:/var/run/docker.sock
+    links:
+      - escher
     command: nc -l 4444

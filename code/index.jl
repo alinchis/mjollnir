@@ -1,9 +1,8 @@
 import Escher: @api, render
 
 desc = md"""
-# Hello, World!
-You can write any **Markdown** text and place it in the middle of other
-tiles.
+# Welcome fellow scientist!
+This is **Mjollnir** a tool intended to simplify working with data.
 """ |> Escher.pad(1em)
 
 main(window) = begin
@@ -16,7 +15,7 @@ main(window) = begin
                       hbox(icon("settings"), hskip(1em), "Settings")]),
                 pages([desc, "Notification tab content", "Settings tab content"]), :tabschannel, :selected)
 
-    vbox(toolbar([iconbutton("face"), "My App", flex(), iconbutton("search")]),
+    vbox(toolbar([iconbutton("face"), "Mjollnir", flex(), iconbutton("search")]),
          maxwidth(30em, t),
          Escher.pad(1em, p))
 end
