@@ -4,7 +4,7 @@ FROM julia:latest
 MAINTAINER Alin CHIS <alin.d.chis@gmail.com>
 
 # add cmake - required to build Escher
-RUN apt-get update && apt-get install -y cmake && apt-get clean
+RUN apt-get update && apt-get install -y cmake netcat && apt-get clean
 
 # add julia packages
 RUN /usr/local/julia/bin/julia -e 'Pkg.update()'
@@ -29,7 +29,6 @@ EXPOSE 5555
 
 # set work directory
 WORKDIR ${JULIA_PKG_DIR}/Escher/examples
-#WORKDIR /root/Git/mjollnir
 
 # set run command for container
 ENTRYPOINT ["escher"]
