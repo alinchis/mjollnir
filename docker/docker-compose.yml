@@ -8,8 +8,6 @@ services:
     command: escher --serve
     ports:
       - 5555:5555
-    links:
-      - docker
 
   docker:
     image: docker
