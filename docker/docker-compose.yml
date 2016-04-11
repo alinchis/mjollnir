@@ -1,18 +1,18 @@
 version: '2'
 services:
-  server:
-    image: mjollnir
+  escher:
+    build: ./escher
     volumes:
       - ~/Git/mjollnir:/root/Git/mjollnir
-#    command: while true; do sleep 1000; done
-#    command: /root/.julia/v0.4/Escher/examples/escher --serve
-#    working_dir: /root/.julia/v0.4/Escher/examples
+    working_dir: /root/Git/mjollnir/docker/escher
+    command: escher --serve
+    ports:
+      - 5555:5555
 
 
   docker:
     image: docker
-    links:
-      - server
     volumes:
       - ~/Git/mjollnir:/root/Git/mjollnir
-    command: nc -lvvz
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: nc -l 4444
