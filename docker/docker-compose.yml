@@ -17,4 +17,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     expose:
       - "4444"
-    command: nc -l 4444
+    command: nc -lvp 4444 -e docker
