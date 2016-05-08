@@ -1,21 +1,26 @@
-using Compose
+using Gadfly
 
 function main(window)
-    # Load HTML dependencies related to the slider
-    push!(window.assets, "widgets")
+    push!(window.assets, "icons")
 
-     # create a Signal which holds the number of iterations to show
-     # the starting value is 5
-    iterations = Signal(5)
+    # create the tabs
+    tabbar = tabs([
+        hbox(iconbutton("face"), hskip(1em), "Tab 1"),
+        hbox(iconbutton("cloud"), hskip(1em), "Tab 2"),
+        hbox(iconbutton("extension"), hskip(1em), "Tab 3"),
+    ])
 
-     # link a widget to the iterations Signal to create a connected_slider
-    connected_slider = subscribe(iterations, slider(0:7, value=5))
+    # create the pages
+    tabcontent = pages([
+        title(3, "web 2 all the things"),
+        plot([sin, cos], 0, 25),
+        title(3, "web component all the things"),
+    ])
 
-    # create a Signal of UI as a return UI_expression
-    map(iterations) do n
-        vbox(
-            connected_slider,
-            sierpinski(n)
-        )
-    end
+    # connect the tabs to pages
+    # returns a pair of "connected" tab set and pages
+    t, p = wire(tabbar, tabcontent, :tab_channel, :selected)
+
+    # stack them on top of each other
+    vbox(t, p)
 end
