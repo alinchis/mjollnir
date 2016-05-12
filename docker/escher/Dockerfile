@@ -4,14 +4,15 @@ FROM julia:latest
 MAINTAINER Alin CHIS <alin.d.chis@gmail.com>
 
 # add cmake - required to build Escher
-RUN apt-get update && apt-get install -y cmake netcat && apt-get clean
+RUN apt-get update && apt-get install -y cmake netcat sqlite3 && apt-get clean
 
 # add julia packages
 RUN /usr/local/julia/bin/julia -e 'Pkg.update()'
-RUN /usr/local/julia/bin/julia -e 'Pkg.add("Redis")'
-RUN /usr/local/julia/bin/julia -e 'Pkg.add("ODBC")'
-RUN /usr/local/julia/bin/julia -e 'Pkg.add("Escher")'
-RUN /usr/local/julia/bin/julia -e 'Pkg.checkout("Escher")'
+#RUN /usr/local/julia/bin/julia -e 'Pkg.add("Redis")'
+#RUN /usr/local/julia/bin/julia -e 'Pkg.add("ODBC")'
+RUN /usr/local/julia/bin/julia -e 'Pkg.clone("https://github.com/alinchis/Escher.jl.git")'
+#RUN /usr/local/julia/bin/julia -e 'Pkg.add("Escher")'
+#RUN /usr/local/julia/bin/julia -e 'Pkg.checkout("Escher")'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("Gadfly")'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("Compose")'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("ComposeDiff")'
