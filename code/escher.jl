@@ -4,8 +4,7 @@ function main(window)
     push!(window.assets, "test")
 
     vbox(
-         icon("face"),
-         icon("cloud"),
-         #icon("hardware:mouse")
+         slider(1:10),
+         plaintext("testing")
          )
 end
