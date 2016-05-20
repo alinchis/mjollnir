@@ -10,12 +10,14 @@ RUN apt-get update && apt-get install -y cmake netcat sqlite3 && apt-get clean
 RUN /usr/local/julia/bin/julia -e 'Pkg.update()'
 #RUN /usr/local/julia/bin/julia -e 'Pkg.add("Redis")'
 #RUN /usr/local/julia/bin/julia -e 'Pkg.add("ODBC")'
-RUN /usr/local/julia/bin/julia -e 'Pkg.clone("https://github.com/alinchis/Escher.jl.git")'
+RUN /usr/local/julia/bin/julia -e 'Pkg.clone("https://github.com/alinchis/Escher.jl.git", "testing")'
 #RUN /usr/local/julia/bin/julia -e 'Pkg.add("Escher")'
 #RUN /usr/local/julia/bin/julia -e 'Pkg.checkout("Escher")'
+RUN /usr/local/julia/bin/julia -e 'Pkg.checkout("Reactive")'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("Gadfly")'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("Compose")'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("ComposeDiff")'
+RUN /usr/local/julia/bin/julia -e 'Pkg.add("LaTeXStrings")'
 
 # julia environment variables
 ENV JULIA_VER v0.4
