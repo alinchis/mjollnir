@@ -3,7 +3,7 @@ version: '2'
 services:
 
   escher:
-    build: ./escher
+    image: alinchis/mjollnir-escher
     volumes:
       - ~/Git/mjollnir:/root/Git/mjollnir
       - ~/Git/Escher.jl/assets:/root/.julia/v0.4/Escher/assets
