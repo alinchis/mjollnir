@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y cmake netcat sqlite3 && apt-get clean
 RUN /usr/local/julia/bin/julia -e 'Pkg.update()'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("Redis")'
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("ODBC")'
+RUN /usr/local/julia/bin/julia -e 'Pkg.add("SQLite")'
 
 # add julia packages needed by Escher
 RUN /usr/local/julia/bin/julia -e 'Pkg.add("Gadfly")'
