@@ -1,10 +1,12 @@
+
+
 function main(window)
 
-    push!(window.assets, "widgets")
+    push!(window.assets, "layout2")
+    push!(window.assets, "vertical-tabs")
 
+    
     vbox(
-         link("test.jl", title(2, "test")),
-         vskip(1em),
-         link("test2.jl", title(2, "test2"))
+         Elem("vertical-tabs")
          )
 end
