@@ -15,4 +15,4 @@ function main(window)
          map(x -> title(1,x), clicks),
          Elem("vertical-tabs")
          )
-    end
+end
