@@ -6,8 +6,7 @@ function main(window)
 
     clicks = Signal{Any}(leftbutton)
 
-    e1 = Elem(:svg, :svg, Elem(:svg, :circle, cx=250, cy=250, r=100, fill="orange"), width=500, height=500) |> cl\
-    ickable([leftbutton, rightbutton, scrollbutton])
+    e1 = Elem(:svg, :svg, Elem(:svg, :circle, cx=250, cy=250, r=100, fill="orange"), width=500, height=500) |> clickable([leftbutton, rightbutton, scrollbutton])
 
 
     vbox(
