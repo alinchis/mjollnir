@@ -1,6 +1,9 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
 
@@ -19,6 +22,12 @@
         height: 100%;
         width: 40px;
         flex-grow: 0;
+        background-color: rgb(40, 40, 40);
+      }
+      .stage-tab {
+        color: gray;
+        margin: 6px;
+        margin-top: 12px;
       }
       #stage-view {
         height: 100%;
@@ -28,14 +37,28 @@
 
     </style>
 
-    <iron-selector id="stage-bar" selected={{selected}}>
-      <iron-icon icon="cloud"></iron-icon>
-      <iron-icon icon="face"></iron-icon>
+    <iron-selector id="stage-bar" selected="{{selected}}">
+      <iron-icon class="stage-tab" icon="lightbulb-outline" title="research questions" onclick="click_tab"></iron-icon>
+      <iron-icon class="stage-tab" icon="extension" title="ideal dataset"></iron-icon>
+      <iron-icon class="stage-tab" icon="file-download" title="data aquisition"></iron-icon>
+      <iron-icon class="stage-tab" icon="add-box" title="data import"></iron-icon>
+      <iron-icon class="stage-tab" icon="explore" title="data exploration and analysis"></iron-icon>
+      <iron-icon class="stage-tab" icon="build" title="data processing"></iron-icon>
+      <iron-icon class="stage-tab" icon="image:add-a-photo" title="data visualization"></iron-icon>
+      <iron-icon class="stage-tab" icon="account-balance" title="text processor"></iron-icon>
+      <iron-icon class="stage-tab" icon="social:share" title="share"></iron-icon>
     </iron-selector>
 
-    <iron-pages id="stage-view" selected={{selected}}>
+    <iron-pages id="stage-view" selected="{{selected}}">
       <div>stage 1</div>
       <div>stage 2</div>
+      <div>stage 3</div>
+      <div>stage 4</div>
+      <div>stage 5</div>
+      <div>stage 6</div>
+      <div>stage 7</div>
+      <div>stage 8</div>
+      <div>stage 9</div>
     </iron-pages>
 
   </template>
@@ -44,7 +67,10 @@
 
     Polymer({
 
-      is: 'main-stage'
+      is: 'main-stage',
+      click_tab: function() {
+        this.$.color = "#fff";
+      }
     })
 
   </script>

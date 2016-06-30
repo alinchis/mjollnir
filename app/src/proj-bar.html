@@ -25,7 +25,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
       .proj_bar {
         position: absolute;
-        bottom: 0px;
+        top: 0px;
         left: 0px;
         color: #757575;
         width: auto;
@@ -38,26 +38,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         width: 180px;
         height: 25px;
       }
-      paper-fab {
-        position: absolute;
-        display: inline-block;
-        top: 10px;
-        left: 10px;
-        z-index: 100;
-      }
 
 
     </style>
 
-    <paper-fab icon="add" title="add project"></paper-fab>
-
-    <paper-tabs class="proj_bar" selected="[[selected]]">
+    <paper-tabs class="proj_bar" selected="{{selected}}">
       <paper-tab class="proj_tab">Project 1</paper-tab>
       <paper-tab class="proj_tab">Project 2</paper-tab>
       <paper-tab class="proj_tab">Project 3</paper-tab>
     </paper-tabs>
 
-    <iron-pages role="main" selected="[[selected]]">
+    <iron-pages role="main" selected="{{selected}}">
       <my-view1>view1</my-view1>
       <my-view2>view2</my-view2>
       <my-view3>view3</my-view3>
@@ -69,7 +60,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     Polymer({
 
-      is: 'proj-bar'
+      is: 'proj-bar'',
+      
+      properties: {
+
+        page: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_pageChanged'
+        },
+
+      },
+
+      observers: [
+        '_routePageChanged(routeData.page)'
+      ],
+
+      _routePageChanged: function(page) {
+        this.page = page || 'view1';
+      },
+
+      _pageChanged: function(page) {
+        // load page import on demand.
+        this.importHref(
+          this.resolveUrl('my-' + page + '.html'), null, null, true);
+      }
     });
 
   </script>
