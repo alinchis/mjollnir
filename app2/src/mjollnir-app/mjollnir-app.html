@@ -1,0 +1,36 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="control-bar.html">
+<link rel="import" href="app-proj.html">
+
+<dom-module id="mjollnir-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        height: 100%;
+      }
+
+    </style>
+
+
+    <control-bar></control-bar>
+    <app-proj></app-proj>
+
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'mjollnir-app',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'mjollnir-app',
+        },
+      },
+
+    });
+  </script>
+</dom-module>

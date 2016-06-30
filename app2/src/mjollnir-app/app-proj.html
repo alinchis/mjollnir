@@ -1,0 +1,67 @@
+
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="proj1-main.html">
+<link rel="import" href="proj2-main.html">
+<link rel="import" href="proj3-main.html">
+
+<dom-module id="app-proj">
+
+  <template>
+
+    <style>
+      :host {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        flex-flow: column;
+        height: 100%;
+      }
+    #project_bar {
+      padding-right: 200px;
+      background-color: rgb(45, 45 ,45);
+      color: gray;
+      font-family: sans-serif;
+      flex-grow: 0;
+    }
+    paper-tabs {
+      width: auto;
+      height: 30px;
+    }
+    #project_content {
+      flex-grow: 1;
+    }
+
+
+
+    </style>
+
+    <header id="project_bar">
+    <paper-tabs selected="{{selected}}" scrollable fit-container>
+      <paper-tab class="proj_tab">Project 1</paper-tab>
+      <paper-tab class="proj_tab">Project 2</paper-tab>
+      <paper-tab class="proj_tab">Project 3</paper-tab>
+    </paper-tabs>
+  </header>
+
+    <section id="project_content">
+      <iron-pages role="main" selected="{{selected}}">
+        <proj1-main></proj1-main>
+        <proj2-main></proj2-main>
+        <proj3-main></proj3-main>
+      </iron-pages>
+    </section>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'app-proj'
+    })
+
+  </script>
+
+</dom-module>

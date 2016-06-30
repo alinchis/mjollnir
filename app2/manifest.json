@@ -1,0 +1,7 @@
+{
+  "name": "mjollnir",
+  "short_name": "mjollnir",
+  "description": "Scientific Workflow System",
+  "start_url": "/",
+  "display": "standalone"
+}
