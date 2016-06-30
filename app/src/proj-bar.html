@@ -1,0 +1,68 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+
+<dom-module id="proj-bar">
+
+  <template>
+
+    <style>
+      :host {
+        display: block;
+      }
+      .proj_bar {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        color: #757575;
+        width: auto;
+        height: 25px;
+        margin-left: 75px;
+      }
+      .proj_tab {
+        display: inline-block;
+        background-color: rgb(45, 45, 45);
+        width: 180px;
+        height: 25px;
+      }
+      paper-fab {
+        position: absolute;
+        display: inline-block;
+        top: 10px;
+        left: 10px;
+        z-index: 100;
+      }
+
+
+    </style>
+
+    <paper-fab icon="add" title="add project"></paper-fab>
+
+    <paper-tabs class="proj_bar" selected="[[selected]]">
+      <paper-tab class="proj_tab">Project 1</paper-tab>
+      <paper-tab class="proj_tab">Project 2</paper-tab>
+      <paper-tab class="proj_tab">Project 3</paper-tab>
+    </paper-tabs>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'proj-bar'
+    });
+
+  </script>
+
+</dom-module>
