@@ -44,22 +44,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-icon-button-ink-color: white;
       }
 
-      .drawer-list {
-        margin: 0 20px;
-      }
-      .drawer-list a {
+      .app_content {
         display: block;
-        padding: 0 16px;
-        line-height: 40px;
-        text-decoration: none;
-        color: var(--app-secondary-color);
-      }
-      .drawer-list a.iron-selected {
-        color: black;
-        font-weight: bold;
-      }
-      .drawer-list a.subroute {
-        padding-left: 32px;
+        width: auto;
+        height: auto;
       }
 
 
@@ -76,19 +64,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <app-header-layout has-scrolling-region>
 
       <app-header>
-        <proj-bar></proj-bar>
         <control-bar></control-bar>
       </app-header>
-
-      <iron-pages role="main" selected="[[selected]]">
-        <my-view1>view1</my-view1>
-        <my-view2>view2</my-view2>
-        <my-view3>view3</my-view3>
-      </iron-pages>
-
     </app-header-layout>
-
-  </app-drawer-layout>
+    <div class="app_content">
+      <proj-bar></proj-bar>
+    </div>
 
   </template>
 

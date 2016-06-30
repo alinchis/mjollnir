@@ -4,7 +4,7 @@ function main(window)
     push!(window.assets, "widgets")
 
     # create the signal to hold the button value
-    click = Signal{Any}(0)
+    click = Signal(0)
 
     # create and connect the button to the signal
     bttn = subscribe(click, button("Click"))
@@ -13,7 +13,7 @@ function main(window)
     values = [1:100]
     i = 0
     
-    map(click) do c
+    map(click) do _
 
         # increase iterator
         # since it is called for every click, you should be able to use a function to fetch the values
