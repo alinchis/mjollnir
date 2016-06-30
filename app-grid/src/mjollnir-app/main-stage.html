@@ -1,0 +1,52 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../bower_components/iron-selector/iron-selector.html">
+
+<dom-module id="main-stage">
+
+  <template>
+
+    <style>
+      :host {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        flex-flow: row;
+        height: 100%;
+      }
+      #stage-bar {
+        height: 100%;
+        width: 40px;
+        flex-grow: 0;
+      }
+      #stage-view {
+        height: 100%;
+        flex-grow: 1;
+        background-color: green;
+      }
+
+    </style>
+
+    <iron-selector id="stage-bar" selected={{selected}}>
+      <iron-icon icon="cloud"></iron-icon>
+      <iron-icon icon="face"></iron-icon>
+    </iron-selector>
+
+    <iron-pages id="stage-view" selected={{selected}}>
+      <div>stage 1</div>
+      <div>stage 2</div>
+    </iron-pages>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'main-stage'
+    })
+
+  </script>
+
+</dom-module>
