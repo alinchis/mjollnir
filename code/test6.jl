@@ -1,20 +1,17 @@
-
 function main(window)
-    push!(window.assets,"widgets")
-    push!(window.assets,"layout2")
-    push!(window.assets,"icons")
 
-    vtabbar = vtabs([icon("icons:explore"),
-                     icon("icons:face"),
-                     icon("icons:extension")
-                     ])
+    push!(window.assets, "widgets")
+    push!(window.assets, "layout2")
+    push!(window.assets, "vertical-tabs")
 
-    vtabcontent = pages([link("test.jl", "page 1"),
-                         link("test2.jl", "page 2"),
-                         link("test4.jl", "page 3")
-                         ])
+    clicks = Signal{Any}(leftbutton)
 
-    t, p = wire(vtabbar, vtabcontent, :tab_channel, :selected)
+    e1 = Elem(:svg, :svg, Elem(:svg, :circle, cx=250, cy=250, r=100, fill="orange"), width=500, height=500) |> clickable([leftbutton, rightbutton, scrollbutton])
 
-    vbox(t, hskip(1em), p)
+
+    vbox(
+         subscribe(clicks, e1),
+         map(x -> title(1,x), clicks),
+         Elem("vertical-tabs")
+         )
 end
