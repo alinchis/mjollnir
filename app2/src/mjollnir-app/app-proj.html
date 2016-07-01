@@ -16,9 +16,9 @@
         display: flex;
         display: -webkit-flex; /* Safari */
         flex-flow: column;
-        height: 100%;
+        min-height: 100%;
       }
-    #project_bar {
+    .project_bar {
       padding-right: 200px;
       background-color: rgb(45, 45 ,45);
       color: gray;
@@ -29,27 +29,35 @@
       width: auto;
       height: 30px;
     }
-    #project_content {
+    .project_content {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .main-page {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .proj-page {
       flex-grow: 1;
     }
 
-
-
     </style>
 
-    <header id="project_bar">
-    <paper-tabs selected="{{selected}}" scrollable fit-container>
-      <paper-tab class="proj_tab">Project 1</paper-tab>
-      <paper-tab class="proj_tab">Project 2</paper-tab>
-      <paper-tab class="proj_tab">Project 3</paper-tab>
-    </paper-tabs>
-  </header>
+    <header class="project_bar">
+        <paper-tabs selected="{{selected}}" scrollable fit-container>
+          <paper-tab class="proj_tab">Project 1</paper-tab>
+          <paper-tab class="proj_tab">Project 2</paper-tab>
+          <paper-tab class="proj_tab">Project 3</paper-tab>
+        </paper-tabs>
+    </header>
 
-    <section id="project_content">
-      <iron-pages role="main" selected="{{selected}}">
-        <proj1-main></proj1-main>
-        <proj2-main></proj2-main>
-        <proj3-main></proj3-main>
+    <section class="project_content">
+      <iron-pages class="main-page" role="main" selected="{{selected}}">
+        <proj1-main class="proj-page"></proj1-main>
+        <proj2-main class="proj-page"></proj2-main>
+        <proj3-main class="proj-page"></proj3-main>
       </iron-pages>
     </section>
 

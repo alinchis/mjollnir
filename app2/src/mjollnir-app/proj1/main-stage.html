@@ -1,0 +1,114 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="stage-questions.html">
+<link rel="import" href="stage-dataset.html">
+<link rel="import" href="stage-aquisitions.html">
+<link rel="import" href="stage-imports.html">
+<link rel="import" href="stage-exploration.html">
+<link rel="import" href="stage-processing.html">
+<link rel="import" href="stage-visualization.html">
+<link rel="import" href="stage-writing.html">
+<link rel="import" href="stage-sharing.html">
+
+<dom-module id="main-stage">
+
+  <template>
+
+    <style>
+      :host {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: row;
+	      flex-direction: row;
+      }
+      .stage-bar {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        width: 40px;
+        flex-grow: 0;
+        background-color: rgb(40, 40, 40);
+      }
+      .stage_bar > .stage-tabs {
+        -webkit-flex: 1;
+	      flex: 1;
+      }
+      .stage-tab {
+        color: gray;
+        margin: 6px;
+        margin-top: 12px;
+        padding: 0px;
+        width: 24px;
+        height: 24px;
+      }
+      .stage-footer {
+        align-items: flex-end;
+        height: 20px;
+        background-color: rgb(35, 35, 35);
+      }
+      .stage-footer-button {
+        width: 16px;
+        height: 16px;
+        padding: 0px;
+        margin-left, margin-right: 12px;
+        margin-top, margin-bottom: 6px;
+      }
+      .stage-views {
+        display: flex;
+        flex: 1;
+        background-color: green;
+      }
+      .stage-view {
+        flex: 1;
+      }
+
+    </style>
+
+    <section class="stage-bar">
+      <iron-selector class="stage-tabs" selected="{{selected}}">
+        <paper-icon-button class="stage-tab" icon="lightbulb-outline" title="research questions"></paper-icon-button>
+        <paper-icon-button class="stage-tab" icon="extension" title="ideal dataset"></paper-icon-button>
+        <paper-icon-button class="stage-tab" icon="file-download" title="data aquisition"></paper-icon-button>
+        <paper-icon-button class="stage-tab" icon="add-box" title="data import"></paper-icon-button>
+        <paper-icon-button class="stage-tab" icon="explore" title="data exploration and analysis"></paper-icon-button>
+        <paper-icon-button class="stage-tab" icon="build" title="data processing"></paper-icon-button>
+        <paper-icon-button class="stage-tab" icon="image:add-a-photo" title="data visualization"></paper-icon-button>
+        <paper-icon-button class="stage-tab" icon="account-balance" title="text processor"></paper-icon-button>
+        <paper-icon-button class="stage-tab" icon="social:share" title="share"></paper-icon-button>
+      </iron-selector>
+      <footer class="stage-footer">
+        <paper-icon-button class="stage-footer-button" icon="settings" title="settings"></paper-icon-button>
+      </footer>
+    </section>
+
+    <iron-pages class="stage-views" selected="{{selected}}">
+      <stage-questions class="stage-view">1</stage-questions>
+      <stage-dataset class="stage-view">2</stage-dataset>
+      <stage-aquisitions class="stage-view">3</stage-aquisitions>
+      <stage-import class="stage-view">4</stage-import>
+      <stage-exploration class="stage-view">5</stage-exploration>
+      <stage-processing class="stage-view">6</stage-processing>
+      <stage-visualization class="stage-view">7</stage-visualization>
+      <stage-writing class="stage-view">8</stage-writing>
+      <stage-sharing class="stage-view">9</stage-sharing>
+    </iron-pages>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'main-stage'
+    })
+
+  </script>
+
+</dom-module>
