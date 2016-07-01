@@ -25,9 +25,12 @@
       font-family: sans-serif;
       flex-grow: 0;
     }
-    paper-tabs {
-      width: auto;
+    .proj-tabs {
       height: 30px;
+      width: auto;
+    }
+    .proj-tab {
+      border-right: 1px solid rgb(50, 50, 50);
     }
     .project_content {
       display: flex;
@@ -46,7 +49,7 @@
     </style>
 
     <header class="project_bar">
-        <paper-tabs selected="{{selected}}" scrollable fit-container>
+        <paper-tabs class="proj-tabs" selected="{{selected}}" scrollable fit-container>
           <paper-tab class="proj_tab">Project 1</paper-tab>
           <paper-tab class="proj_tab">Project 2</paper-tab>
           <paper-tab class="proj_tab">Project 3</paper-tab>

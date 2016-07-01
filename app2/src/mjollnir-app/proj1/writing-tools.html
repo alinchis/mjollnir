@@ -1,0 +1,68 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+
+<dom-module id="writing-tools">
+
+  <template>
+
+    <style>
+      :host {
+        background-color: rgb(40, 40, 40);
+        border-top: 1px solid rgb(50, 50, 50);
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        justify-content: space-between;
+      }
+      .tools-bar {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        flex-grow: 1;
+      }
+      .bottom {
+        border-top: 1px solid rgb(50, 50, 50);
+      }
+      .tools-footer {
+        background-color: rgb(35, 35, 35);
+        border-top: 1px solid rgb(50, 50, 50);
+        height: 20px;
+        padding-left: 10px;
+      }
+      .tools-footer-button {
+        width: 16px;
+        height: 16px;
+        padding: 0px;
+        margin-left, margin-right: 12px;
+        margin-top, margin-bottom: 6px;
+      }
+
+    </style>
+
+    <div class="tools-bar top"></div>
+    <div class="tools-bar bottom"></div>
+    <footer class="tools-footer">
+      <paper-icon-button class="tools-footer-button" icon="settings" title="settings"></paper-icon-button>
+    </footer>
+
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'writing-tools'
+    })
+
+  </script>
+
+</dom-module>

@@ -6,6 +6,9 @@
 <link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="writing-sources.html">
+<link rel="import" href="writing-workarea.html">
+<link rel="import" href="writing-tools.html">
 
 <dom-module id="stage-writing">
 
@@ -15,29 +18,25 @@
       :host {
         display: flex;
         flex-direction: row;
-        border: 2px solid coral;
       }
       .sources {
-        border: 1px solid white;
         flex: 0;
         min-width: 160px;
       }
       .workarea {
-        border: 1px solid orange;
         flex: 1;
         min-width: 400px;
       }
       .tools {
-        border: 1px solid magenta;
         flex: 0;
         min-width: 200px;
       }
 
     </style>
 
-    <section class="sources"></section>
-    <section class="workarea"></section>
-    <section class="tools"></section>
+    <writing-sources class="sources"></writing-sources>
+    <writing-workarea class="workarea"></writing-workarea>
+    <writing-tools class="tools"></writing-tools>
 
 
   </template>

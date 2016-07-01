@@ -1,0 +1,84 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+
+<dom-module id="writing-workarea">
+
+  <template>
+
+    <style>
+      :host {
+        border-left: 1px solid rgb(50, 50, 50);
+        border-right: 1px solid rgb(50, 50, 50);
+        border-top: 1px solid rgb(50, 50, 50);
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        justify-content: space-between;
+        overflow: auto;
+      }
+      .sources-title {
+        color: gray;
+        font-family: sans-serif;
+        font-size: 0.7em;
+        text-align: center;
+        padding-top: 10px;
+      }
+      .sources-bar {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        flex-grow: 1;
+      }
+      .sources-item {
+        border: 1px solid yellow;
+        color: gray;
+        height: 60px;
+        margin: 6px;
+        margin-top: 12px;
+        padding: 0px;
+        width: 90%;
+      }
+      .sources-footer {
+        background-color: rgb(35, 35, 35);
+        border-top: 1px solid rgb(50, 50, 50);
+        height: 20px;
+        padding-left: 10px;
+      }
+      .sources-footer-button {
+        width: 16px;
+        height: 16px;
+        padding: 0px;
+        margin-left, margin-right: 12px;
+        margin-top, margin-bottom: 6px;
+      }
+
+    </style>
+
+    <div class="sources-bar" selected="{{selected}}">
+      <paper-icon-button class="sources-item" src="" title="map source"></paper-icon-button>
+    </div>
+    <footer class="sources-footer">
+      <paper-icon-button class="sources-footer-button" icon="settings" title="settings"></paper-icon-button>
+    </footer>
+
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'writing-workarea'
+    })
+
+  </script>
+
+</dom-module>
