@@ -1,6 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
-<link rel="import" href="main-stage.html">
+<link rel="import" href="./proj1/main-stage.html">
 
 <dom-module id="proj1-main">
 
@@ -8,16 +8,18 @@
 
     <style>
       :host {
-        display: block;
-        height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex: 1;
       }
-      div {
-        height: 100%;
+      .content {
+        flex: 1;
       }
+
 
     </style>
 
-    <main-stage></main-stage>
+    <main-stage class="content"></main-stage>
 
   </template>
 
