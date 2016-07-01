@@ -1,0 +1,100 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+
+<dom-module id="writing-tools-static">
+
+  <template>
+
+    <style>
+      :host {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: row;
+	      flex-direction: row;
+      }
+      .tools-bar {
+        background-color: rgb(40, 40, 40);
+        border-top: 1px solid rgb(50, 50, 50);
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        flex-grow: 0;
+        justify-content: space-between;
+        width: 40px;
+      }
+      .tool-tab {
+        border: 1px solid grey;
+        color: gray;
+        margin: 6px;
+        margin-top: 12px;
+        padding: 0px;
+        width: 24px;
+        height: 24px;
+      }
+      .tools-footer {
+        background-color: rgb(35, 35, 35);
+        border-top: 1px solid rgb(50, 50, 50);
+        height: 20px;
+        padding-left: 10px;
+      }
+      .tools-footer-button {
+        width: 16px;
+        height: 16px;
+        padding: 0px;
+        margin-left, margin-right: 12px;
+        margin-top, margin-bottom: 6px;
+      }
+      .tools-panels {
+        border: 1px solid grey;
+        display: flex;
+        flex: 0;
+        width: 120px;
+      }
+      .panel-view {
+        flex: 1;
+      }
+
+    </style>
+
+    <section class="tools-bar">
+      <iron-selector class="tool-tabs" selected="{{selected}}">
+        <div class="tool-tab" title="character">C</div>
+        <div class="tool-tab" title="paragraph">P</div>
+        <div class="tool-tab" title="list">L</div>
+        <div class="tool-tab" title="section">S</div>
+        <div class="tool-tab" title="page">P</div>
+        <div class="tool-tab" title="table">T</div>
+      </iron-selector>
+      <footer class="tools-footer">
+        <paper-icon-button class="tools-footer-button" icon="settings" title="settings"></paper-icon-button>
+      </footer>
+    </section>
+
+    <iron-pages class="tools-panels" selected="{{selected}}">
+      <div class="panel-view">character panel</div>
+      <div class="panel-view">paragraph panel</div>
+      <div class="panel-view">list panel</div>
+      <div class="panel-view">section panel</div>
+      <div class="panel-view">page panel</div>
+      <div class="panel-view">table panel</div>
+    </iron-pages>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'writing-tools-static'
+    })
+
+  </script>
+
+</dom-module>

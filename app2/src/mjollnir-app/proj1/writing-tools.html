@@ -6,6 +6,8 @@
 <link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="writing-tools-static.html">
+<link rel="import" href="writing-tools-dynamic.html">
 
 <dom-module id="writing-tools">
 
@@ -24,8 +26,8 @@
       .tools-bar {
         display: flex;
         display: -webkit-flex; /* Safari */
-        -webkit-flex-direction: column;
-	      flex-direction: column;
+        -webkit-flex-direction: row-reverse;
+	      flex-direction: row-reverse;;
         flex-grow: 1;
       }
       .bottom {
@@ -47,8 +49,8 @@
 
     </style>
 
-    <div class="tools-bar top"></div>
-    <div class="tools-bar bottom"></div>
+    <writing-tools-static class="tools-bar top"></writing-tools-static>
+    <writing-tools-dynamic class="tools-bar bottom"></writing-tools-dynamic>
     <footer class="tools-footer">
       <paper-icon-button class="tools-footer-button" icon="settings" title="settings"></paper-icon-button>
     </footer>
