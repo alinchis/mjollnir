@@ -28,13 +28,14 @@
 	      flex-direction: row;
       }
       .stage-bar {
+        background-color: rgb(40, 40, 40);
         display: flex;
         display: -webkit-flex; /* Safari */
         -webkit-flex-direction: column;
 	      flex-direction: column;
-        width: 40px;
         flex-grow: 0;
-        background-color: rgb(40, 40, 40);
+        justify-content: space-between;
+        width: 40px;
       }
       .stage_bar > .stage-tabs {
         -webkit-flex: 1;
@@ -49,9 +50,9 @@
         height: 24px;
       }
       .stage-footer {
-        align-items: flex-end;
-        height: 20px;
         background-color: rgb(35, 35, 35);
+        height: 20px;
+        padding-left: 10px;
       }
       .stage-footer-button {
         width: 16px;
@@ -63,7 +64,6 @@
       .stage-views {
         display: flex;
         flex: 1;
-        background-color: green;
       }
       .stage-view {
         flex: 1;
