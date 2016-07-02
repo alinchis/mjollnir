@@ -6,6 +6,8 @@
 <link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="questions-left.html">
+<link rel="import" href="questions-right.html">
 
 <dom-module id="stage-questions">
 
@@ -13,87 +15,24 @@
 
     <style>
       :host {
+        background-color: rgb(50, 50, 50);
+        color: rgb(200, 200, 200);
         display: flex;
         flex-direction: row;
+        font-family: sans-serif;
+        font-size: 0.8em;
+        padding: 0px 10px 10px 10px;
       }
       .half-view {
         display: flex;
-        border: 1px solid white;
         flex: 1;
         width: 50%;
-      }
-      .paper-title {
-        width: 99%;
-      }
-      .paper-description {
-        width: 99%;
-      }
-      .paper-keywords {
-        width: 99%;
-      }
-      .research-questions {
-        width: 99%;
       }
 
     </style>
 
-    <section class="half-view">
-      <div>
-        <h2>Paper Title</h2>
-        <p>Provide a title for your work, do not worry, it can be modified at any time. Try to keep it short while avoiding to be too general</p>
-        <form>
-          <textarea class="paper-title" type="text" name="Paper Title"></textarea>
-        </form>
-
-        <h2>Describe Research Idea</h2>
-        <p>It is recomanded to use provided steps to work on your paper, unless you do exploratory work and required data is not in the database. Try to describe your starting idea in a short, concise maner.
-        <form>
-          <textarea class="paper-description" type="text" name="Paper Description"></textarea>
-        </form>
-
-        <h2>Keywords</h2>
-        <p>Please use keywords to provide information about your work for search and index purposes</p>
-        <form>
-          <textarea class="paper-keywords" type="text" name="Paper Keywords"></textarea>
-        </form>
-      </div>
-    </section>
-
-    <section class="half-view">
-      <div>
-        <h2>Formulate Research Questions</h2>
-        <p>Please provide three to five questions that your work must provide answers to. These can be edited if needed at any time. For your reference please find below the "Data Science" questions typology, arranged in order of difficulty</p>
-
-        <h3>1. Descriptive</h3>
-        <p>Used to describe a dataset. The results can't be generalised and are usually applied to census data.</p>
-
-        <h3>2. Exploratory</h3>
-        <p>Used to determine unknown relations. They do not provide a definitive answer and are not used alone for generalisations/forecasts</p>
-
-        <h3>3. Inferential</h3>
-        <p>Use a small population to describe characteristics about the entire population. It's the purpose of the statistical models, estimates both quantity and uncertainty.</p>
-
-        <h3>4. Predictive</h3>
-        <p>Refers to the use of data on some objects to make value predictions for other objects. Prediction does not imply causality. Works well for simple models with large quantity of data.</p>
-
-        <h3>5. Causal</h3>
-        <p>Used to determine change in a variable by changing another variable. It's refered as a golden rule in data science for analysing data. The result represents medium effects, not representative for all individuals in chosen population.</p>
-
-        <h3>6. Mechanistic</h3>
-        <p>The most complex type of question, tries to understand exact changes in variables that lead to changes in other variables for individual objects. They are very hard to infer, except the simple cases. Usually, they are modelled from a set of deterministic equations, and the random data component represents the measuring error. If the equations are known, and the parametern are not, these can be inferred by data analysis.</p>
-
-        <form>
-          <textarea class="research-questions" type="text" name="Question 1">Question 1?</textarea>
-          <textarea class="research-questions" type="text" name="Question 2">Question 2?</textarea>
-          <textarea class="research-questions" type="text" name="Question 2">Question 3?</textarea>
-          <textarea class="research-questions" type="text" name="Question 2">Question 4?</textarea>
-          <textarea class="research-questions" type="text" name="Question 2">Question 5?</textarea>
-        </form>
-
-
-      </div>
-    </section>
-
+    <questions-left class="half-view"></questions-left>
+    <questions-right class="half-view"></questions-right>
 
   </template>
 

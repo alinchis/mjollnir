@@ -26,9 +26,6 @@
         -webkit-flex-direction: row;
 	      flex-direction: row;
       }
-      .stage-tab.iron-selected {
-        background-color: rgb(55, 55, 55);
-      }
       .stage-bar {
         background-color: rgb(40, 40, 40);
         border-top: 1px solid rgb(50, 50, 50);
@@ -44,20 +41,6 @@
         -webkit-flex: 1;
 	      flex: 1;
       }
-      .stage-tab {
-        align-items: center;
-        color: gray;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        margin: 0px;
-        margin-top: 0px;
-        min-height: 40px;
-        padding: 0px;
-      }
-      .tab-icon {
-
-      }
       .stage-footer {
         background-color: rgb(35, 35, 35);
         border-top: 1px solid rgb(50, 50, 50);
@@ -71,12 +54,29 @@
         margin-left, margin-right: 12px;
         margin-top, margin-bottom: 6px;
       }
+      .stage-tab {
+        align-items: center;
+        color: gray;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        margin: 0px;
+        margin-top: 0px;
+        min-height: 40px;
+        padding: 0px;
+      }
+      .stage-tab.iron-selected {
+        background-color: rgb(55, 55, 55);
+      }
       .stage-views {
         display: flex;
         flex: 1;
       }
       .stage-view {
         flex: 1;
+      }
+      .tab-icon {
+
       }
 
     </style>
@@ -120,7 +120,7 @@
       properties: {
         selected: {
           type: Number,
-          value: 7
+          value: 0
         }
       }
     })

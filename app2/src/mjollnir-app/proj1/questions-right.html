@@ -1,0 +1,104 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+
+<dom-module id="questions-right">
+
+  <template>
+
+    <style>
+    :host {
+      display: flex;
+      flex-direction: column;
+      padding: 0px 10px 10px 10px;
+    }
+    h2 {
+      font-size: 1.3em;
+      margin-bottom: 0.5em;
+      margin-top: 1.5em;
+    }
+    h3 {
+      font-size: 1em;
+      margin-bottom: 0.3em;
+      margin-top: 1em;
+    }
+    p {
+      margin: 0px;
+      line-height: 1.5;
+    }
+    .question-container {
+      background-color: #3162a3;
+      margin-top: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .text-input {
+      padding: 0px;
+      --paper-input-container-input-color: white;
+      --paper-input-container-focus-color: orange;
+      --paper-input-container-color: rgb(40, 40, 40);
+      width: 100%;
+    }
+
+    </style>
+
+    <h2>Formulate Research Questions</h2>
+    <p>Please provide three to five questions that your work must provide answers to. These can be edited if needed at any time. For your reference please find below the Data Science questions typology, arranged in order of difficulty</p>
+
+    <h3>1. Descriptive</h3>
+    <p>Used to describe a dataset. The results can't be generalised and are usually applied to census data.</p>
+
+    <h3>2. Exploratory</h3>
+    <p>Used to determine unknown relations. They do not provide a definitive answer and are not used alone for generalisations/forecasts</p>
+
+    <h3>3. Inferential</h3>
+    <p>Use a small population to describe characteristics about the entire population. It's the purpose of the statistical models, estimates both quantity and uncertainty.</p>
+
+    <h3>4. Predictive</h3>
+    <p>Refers to the use of data on some objects to make value predictions for other objects. Prediction does not imply causality. Works well for simple models with large quantity of data.</p>
+
+    <h3>5. Causal</h3>
+    <p>Used to determine change in a variable by changing another variable. It's refered as a golden rule in data science for analysing data. The result represents medium effects, not representative for all individuals in chosen population.</p>
+
+    <h3>6. Mechanistic</h3>
+    <p>The most complex type of question, tries to understand exact changes in variables that lead to changes in other variables for individual objects. They are very hard to infer, except the simple cases. Usually, they are modelled from a set of deterministic equations, and the random data component represents the measuring error. If the equations are known, and the parametern are not, these can be inferred by data analysis.</p>
+
+    <div class="question-container">
+      <paper-input class="text-input" placeholder="question 1" no-label-float>
+        <paper-icon-button class="text-icon" suffix onclick="clearInput()" icon="clear" alt="clear" title="clear"></paper-icon-button>
+      </paper-input>
+    </div>
+    <div class="question-container">
+      <paper-input class="text-input" placeholder="question 2" no-label-float>
+        <paper-icon-button class="text-icon" suffix onclick="clearInput()" icon="clear" alt="clear" title="clear"></paper-icon-button>
+      </paper-input>
+    </div>
+    <div class="question-container">
+      <paper-input class="text-input" placeholder="question 3" no-label-float>
+        <paper-icon-button class="text-icon" suffix onclick="clearInput()" icon="clear" alt="clear" title="clear"></paper-icon-button>
+      </paper-input>
+    </div>
+    <div class="question-container">
+      <paper-input class="text-input" placeholder="question 4" no-label-float>
+        <paper-icon-button class="text-icon" suffix onclick="clearInput()" icon="clear" alt="clear" title="clear"></paper-icon-button>
+      </paper-input>
+    </div>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'questions-right'
+
+    })
+  </script>
+
+</dom-module>
