@@ -26,6 +26,9 @@
         -webkit-flex-direction: row;
 	      flex-direction: row;
       }
+      .stage-tab.iron-selected {
+        background-color: rgb(55, 55, 55);
+      }
       .stage-bar {
         background-color: rgb(40, 40, 40);
         border-top: 1px solid rgb(50, 50, 50);
@@ -37,17 +40,23 @@
         justify-content: space-between;
         width: 40px;
       }
-      .stage_bar > .stage-tabs {
+      .stage-bar > .stage-tabs {
         -webkit-flex: 1;
 	      flex: 1;
       }
       .stage-tab {
+        align-items: center;
         color: gray;
-        margin: 6px;
-        margin-top: 12px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        margin: 0px;
+        margin-top: 0px;
+        min-height: 40px;
         padding: 0px;
-        width: 24px;
-        height: 24px;
+      }
+      .tab-icon {
+
       }
       .stage-footer {
         background-color: rgb(35, 35, 35);
@@ -74,15 +83,15 @@
 
     <section class="stage-bar">
       <iron-selector class="stage-tabs" selected="{{selected}}">
-        <paper-icon-button class="stage-tab" icon="lightbulb-outline" title="research questions"></paper-icon-button>
-        <paper-icon-button class="stage-tab" icon="search" title="ideal dataset"></paper-icon-button>
-        <paper-icon-button class="stage-tab" icon="file-download" title="data aquisition"></paper-icon-button>
-        <paper-icon-button class="stage-tab" icon="add-box" title="data import"></paper-icon-button>
-        <paper-icon-button class="stage-tab" icon="explore" title="data exploration and analysis"></paper-icon-button>
-        <paper-icon-button class="stage-tab" icon="build" title="data processing"></paper-icon-button>
-        <paper-icon-button class="stage-tab" icon="extension" title="data visualization"></paper-icon-button>
-        <paper-icon-button class="stage-tab" icon="account-balance" title="text processor"></paper-icon-button>
-        <paper-icon-button class="stage-tab" icon="social:share" title="share"></paper-icon-button>
+        <div class="stage-tab"><iron-icon class="tab-icon" icon="lightbulb-outline" title="research questions"></iron-icon></div>
+        <div class="stage-tab"><iron-icon class="tab-icon" icon="search" title="ideal dataset"></iron-icon></div>
+        <div class="stage-tab"><iron-icon class="tab-icon" icon="file-download" title="data aquisition"></iron-icon></div>
+        <div class="stage-tab"><iron-icon class="tab-icon" icon="add-box" title="data import"></iron-icon></div>
+        <div class="stage-tab"><iron-icon class="tab-icon" icon="explore" title="data exploration and analysis"></iron-icon></div>
+        <div class="stage-tab"><iron-icon class="tab-icon" icon="build" title="data processing"></iron-icon></div>
+        <div class="stage-tab"><iron-icon class="tab-icon" icon="extension" title="data visualization"></iron-icon></div>
+        <div class="stage-tab"><iron-icon class="tab-icon" icon="account-balance" title="text processor"></iron-icon></div>
+        <div class="stage-tab"><iron-icon class="tab-icon" icon="social:share" title="share"></iron-icon></div>
       </iron-selector>
       <footer class="stage-footer">
         <paper-icon-button class="stage-footer-button" icon="settings" title="settings"></paper-icon-button>
@@ -107,7 +116,13 @@
 
     Polymer({
 
-      is: 'main-stage'
+      is: 'main-stage',
+      properties: {
+        selected: {
+          type: Number,
+          value: 7
+        }
+      }
     })
 
   </script>

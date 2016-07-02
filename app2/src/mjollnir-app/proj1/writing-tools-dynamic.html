@@ -1,0 +1,121 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+
+<dom-module id="writing-tools-dynamic">
+
+  <template>
+
+    <style>
+      :host {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: row;
+	      flex-direction: row;
+      }
+      .iron-selected {
+        background: rgb(50, 50, 50);
+      }
+      .tools-bar {
+        display: flex;
+        background-color: rgb(40, 40, 40);
+        border-top: 1px solid rgb(50, 50, 50);
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        flex-grow: 0;
+        justify-content: space-between;
+        min-height: 256px;
+        width: 35px;
+      }
+      .tool-tabs {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+      .tool-tab {
+        align-items: center;
+        border-bottom: 1px solid rgb(50, 50, 50);
+        color: gray;
+        cursor: pointer;
+        display: flex;
+        flex-grow: 1;
+        flex-shrink: 0;
+        font-family: sans-serif;
+        font-size: 1.8em;
+        justify-content: center;
+        min-height: 24px;
+        padding: 0px;
+        min-width: 24px;
+      }
+      .tools-footer {
+        background-color: rgb(35, 35, 35);
+        height: 20px;
+        padding-left: 10px;
+      }
+      .tools-footer-button {
+        width: 16px;
+        height: 16px;
+        padding: 0px;
+        margin-left, margin-right: 12px;
+        margin-top, margin-bottom: 6px;
+      }
+      .tools-panels {
+        display: flex;
+        flex: 1;
+        min-height: 256px;
+        width: 120px;
+      }
+      .panel-view {
+        flex: 1;
+      }
+
+    </style>
+
+    <section class="tools-bar">
+      <iron-selector class="tool-tabs" selected="{{selected}}">
+        <div class="tool-tab" title="auto-title"><div>A</div></div>
+        <div class="tool-tab" title="bibliography">B</div>
+        <div class="tool-tab" title="reference">R</div>
+        <div class="tool-tab" title="object">O</div>
+        <div class="tool-tab" title="markers">M</div>
+        <div class="tool-tab" title="statistics">S</div>
+      </iron-selector>
+      <footer class="tools-footer">
+        <paper-icon-button class="tools-footer-button" icon="settings" title="settings"></paper-icon-button>
+      </footer>
+    </section>
+
+    <iron-pages class="tools-panels" selected="{{selected}}">
+      <div class="panel-view">auto-title panel</div>
+      <div class="panel-view">bibliography panel</div>
+      <div class="panel-view">reference panel</div>
+      <div class="panel-view">object panel</div>
+      <div class="panel-view">markers panel</div>
+      <div class="panel-view">statistics panel</div>
+    </iron-pages>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'writing-tools-dynamic',
+      properties: {
+        selected: {
+          type: Number,
+          value: 0
+        }
+      }
+    })
+
+  </script>
+
+</dom-module>
