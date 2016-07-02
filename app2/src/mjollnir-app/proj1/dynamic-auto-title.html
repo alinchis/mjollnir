@@ -1,0 +1,88 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+
+<dom-module id="dynamic-auto-title">
+
+  <template>
+
+    <style>
+      :host {
+        color: gray;
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        font-family: sans-serif;
+        padding: 5px;
+      }
+
+      .buttons {
+        cursor: pointer;
+        flex-grow: 0;
+        height: 20px;
+        padding-left: 5px;
+      }
+      .iron-selected {
+        background: rgb(250, 250, 250);
+      }
+      .list {
+        background-color: rgb(200, 200, 200);
+        color: black;
+        cursor: pointer;
+        flex-grow: 1;
+        padding: 5px;
+      }
+      .list-item {
+        font-size: 0.7em;
+        padding: 2px;
+      }
+      .tab-icon {
+        --iron-icon-fill-color: rgb(200, 200, 200);
+        height: 16px;
+        width: 16px;
+      }
+      .title {
+        flex-grow: 0;
+        font-size: 0.8em;
+        height: 30px;
+      }
+
+    </style>
+
+    <section class="title">auto-titles</section>
+    <section class="buttons">
+      <iron-icon class="tab-icon" icon="add-circle" title="create"></iron-icon>
+      <iron-icon class="tab-icon" icon="remove-circle" title="remove"></iron-icon>
+      <iron-icon class="tab-icon" icon="create" title="edit"></iron-icon>
+      <iron-icon class="tab-icon" icon="move-to-inbox" title="apply changes"></iron-icon>
+    </section>
+    <iron-selector class="list">
+      <div class="list-item">Title</div>
+      <div class="list-item">Heading</div>
+      <div class="list-item">Sub-heading</div>
+      <div class="list-item">Small Heading</div>
+      <div class="list-item">Small Sub-heading</div>
+      <div class="list-item">Smaller Heading</div>
+      <div class="list-item">Smaller Sub-Heading</div>
+      <div class="list-item">Mini Heading</div>
+      <div class="list-item">Mini Sub-heading</div>
+    </iron-selector>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'dynamic-auto-title'
+    })
+
+  </script>
+
+</dom-module>

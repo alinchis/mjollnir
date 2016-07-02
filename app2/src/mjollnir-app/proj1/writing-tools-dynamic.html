@@ -6,6 +6,8 @@
 <link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="dynamic-auto-title.html">
+<link rel="import" href="dynamic-bibliography.html">
 
 <dom-module id="writing-tools-dynamic">
 
@@ -93,8 +95,8 @@
     </section>
 
     <iron-pages class="tools-panels" selected="{{selected}}">
-      <div class="panel-view">auto-title panel</div>
-      <div class="panel-view">bibliography panel</div>
+      <dynamic-auto-title class="panel-view">auto-title panel</dynamic-auto-title>
+      <dynamic-bibliography class="panel-view">bibliography panel</dynamic-bibliography>
       <div class="panel-view">reference panel</div>
       <div class="panel-view">object panel</div>
       <div class="panel-view">markers panel</div>
