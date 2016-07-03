@@ -1,0 +1,97 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/image-icons.html">
+<link rel="import" href="../../../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="paragraph-attributes.html">
+<link rel="import" href="paragraph-styles.html">
+
+<dom-module id="static-paragraph">
+
+  <template>
+
+    <style>
+      :host {
+        color: gray;
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        font-family: sans-serif;
+        padding: 5px;
+      }
+      .character-view{
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        flex-grow: 1;
+      }
+      .character-tab-bar {
+        align-items: center;
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: row;
+	      flex-direction: row;
+        justify-content: center;
+      }
+      .character-tab-content {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        flex-grow: 1;
+      }
+      .content-page {
+        flex-grow: 1;
+      }
+      .iron-selected {
+        background-color: rgb(200, 200, 200);
+        color: rgb(50, 50, 50);
+      }
+      .tab {
+        cursor: pointer;
+        font-size: 0.8em;
+        padding-left: 5px;
+        width: 50%;
+      }
+      .title {
+        flex-grow: 0;
+        font-size: 0.8em;
+        height: 30px;
+      }
+
+    </style>
+
+    <section class="title">character</section>
+    <section class="character-view">
+      <iron-selector class="character-tab-bar" selected="{{selected}}">
+        <div class="tab">attributes</div>
+        <div class="tab">styles</div>
+      </iron-selector>
+      <iron-pages class="character-tab-content" selected="{{selected}}">
+        <paragraph-attributes class="content-page">attributes page</paragraph-attributes>
+        <paragraph-styles class="content-page">styles page</paragraph-styles>
+      </iron-pages>
+    </section>
+
+  </template>
+
+  <script>
+
+    Polymer({
+      is: 'static-paragraph',
+      properties: {
+        selected: {
+          type: Number,
+          value: 1
+        }
+      }
+    })
+
+  </script>
+
+</dom-module>

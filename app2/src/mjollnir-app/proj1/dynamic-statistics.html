@@ -1,0 +1,126 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+
+<dom-module id="dynamic-statistics">
+
+  <template>
+
+    <style>
+      :host {
+        color: gray;
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        flex-grow: 1;
+        font-family: sans-serif;
+        padding: 5px;
+      }
+
+      .item {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: row;
+	      flex-direction: row;
+        flex-grow: 0;
+        justify-content: space-between;
+      }
+      .item-text {
+
+      }
+      .item-number {
+
+      }
+      .list {
+        background-color: rgb(200, 200, 200);
+        color: black;
+        cursor: text;
+        flex-grow: 1;
+        padding: 5px;
+      }
+      .list-item {
+        font-size: 0.7em;
+        padding: 2px;
+      }
+      .list-title {
+        border-bottom: 1px solid rgb(50, 50, 50);
+        font-size: 0.8em;
+        height: 10px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+      }
+      .title {
+        font-size: 0.8em;
+        height: 30px;
+      }
+
+    </style>
+
+    <section class="title">statistics</section>
+    <section class="list">
+      <div class="list-item">
+        <div class="list-title">general</div>
+        <div class="item">
+          <div class="item-text">characters</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="item">
+          <div class="item-text">words</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="item">
+          <div class="item-text">lines</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="item">
+          <div class="item-text">pages</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="list-title">notes</div>
+        <div class="item">
+          <div class="item-text">notes</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="item">
+          <div class="item-text">characters</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="item">
+          <div class="item-text">words</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="list-title">other</div>
+        <div class="item">
+          <div class="item-text">tables</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="item">
+          <div class="item-text">images</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="item">
+          <div class="item-text">citations</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="item">
+          <div class="item-text">hyperlinks</div>
+          <div class="item-number">0</div>
+        </div>
+        <div class="item">
+          <div class="item-text">auto-titles</div>
+          <div class="item-number">0</div>
+        </div>
+      </div>
+    </section>
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'dynamic-statistics'
+    })
+
+  </script>
+
+</dom-module>
