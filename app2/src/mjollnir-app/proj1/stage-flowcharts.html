@@ -9,53 +9,6 @@
 
 <dom-module id="stage-flowcharts">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/1.6.11/go.js"></script>
-
-  <script id="code">
-      function init() {
-          //if (window.goSamples) goSamples();  // init for these samples -- you don't need to call this
-
-          var $ = go.GraphObject.make;  // for conciseness in defining templates
-
-          myDiagram = $(go.Diagram, "myDiagramDiv",  // create a Diagram for the DIV HTML element
-                        {
-                          initialContentAlignment: go.Spot.Center,  // center the content
-                          "undoManager.isEnabled": true  // enable undo & redo
-                        });
-
-          // define a simple Node template
-          myDiagram.nodeTemplate =
-            $(go.Node, "Auto",  // the Shape will go around the TextBlock
-              $(go.Shape, "RoundedRectangle", { strokeWidth: 0},
-                // Shape.fill is bound to Node.data.color
-                new go.Binding("fill", "color")),
-              $(go.TextBlock,
-                { margin: 8 },  // some room around the text
-                // TextBlock.text is bound to Node.data.key
-                new go.Binding("text", "key"))
-            );
-
-          // but use the default Link template, by not setting Diagram.linkTemplate
-
-          // create the model data that will be represented by Nodes and Links
-          myDiagram.model = new go.GraphLinksModel(
-          [
-            { key: "Alpha", color: "lightblue" },
-            { key: "Beta", color: "orange" },
-            { key: "Gamma", color: "lightgreen" },
-            { key: "Delta", color: "pink" }
-          ],
-          [
-            { from: "Alpha", to: "Beta" },
-            { from: "Alpha", to: "Gamma" },
-            { from: "Beta", to: "Beta" },
-            { from: "Gamma", to: "Delta" },
-            { from: "Delta", to: "Alpha" }
-          ]);
-        }
-
-  </script>
-
   <template>
     <style>
       :host {
@@ -81,13 +34,54 @@
     </style>
 
     <section class="sources">
+        <div id="myPaletteDiv" style="border: solid 1px gray; height: 720px"></div>
     </section>
 
     <section class="workarea">
-        <div id="myDiagramDiv" style="border: solid 1px orange; width:400px; height:400px"></div>
+        <div id="myDiagramDiv" style="border: solid 1px gray; height: 720px"></div>
     </section>
 
     <section class="tools">
+        <button id="SaveButton" onclick="save()">Save</button>
+        <button onclick="load()">Load</button>
+        Diagram Model saved in JSON format:
+        <textarea id="mySavedModel" style="width:100%;height:300px">{ "class": "go.GraphLinksModel",
+        "linkFromPortIdProperty": "fromPort",
+        "linkToPortIdProperty": "toPort",
+        "nodeDataArray": [
+          {"category":"Comment", "loc":"360 -10", "text":"Kookie Brittle", "key":-13},
+          {"key":-1, "category":"Start", "loc":"175 0", "text":"Start"},
+          {"key":0, "loc":"0 77", "text":"Preheat oven to 375 F"},
+          {"key":1, "loc":"175 100", "text":"In a bowl, blend: 1 cup margarine, 1.5 teaspoon vanilla, 1 teaspoon salt"},
+          {"key":2, "loc":"175 190", "text":"Gradually beat in 1 cup sugar and 2 cups sifted flour"},
+          {"key":3, "loc":"175 270", "text":"Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels"},
+          {"key":4, "loc":"175 370", "text":"Press evenly into ungreased 15x10x1 pan"},
+          {"key":5, "loc":"352 85", "text":"Finely chop 1/2 cup of your choice of nuts"},
+          {"key":6, "loc":"175 440", "text":"Sprinkle nuts on top"},
+          {"key":7, "loc":"175 500", "text":"Bake for 25 minutes and let cool"},
+          {"key":8, "loc":"175 570", "text":"Cut into rectangular grid"},
+          {"key":-2, "category":"End", "loc":"175 640", "text":"Enjoy!"}
+        ],
+        "linkDataArray": [
+          {"from":1, "to":2, "fromPort":"B", "toPort":"T"},
+          {"from":2, "to":3, "fromPort":"B", "toPort":"T"},
+          {"from":3, "to":4, "fromPort":"B", "toPort":"T"},
+          {"from":4, "to":6, "fromPort":"B", "toPort":"T"},
+          {"from":6, "to":7, "fromPort":"B", "toPort":"T"},
+          {"from":7, "to":8, "fromPort":"B", "toPort":"T"},
+          {"from":8, "to":-2, "fromPort":"B", "toPort":"T"},
+          {"from":-1, "to":0, "fromPort":"B", "toPort":"T"},
+          {"from":-1, "to":1, "fromPort":"B", "toPort":"T"},
+          {"from":-1, "to":5, "fromPort":"B", "toPort":"T"},
+          {"from":5, "to":4, "fromPort":"B", "toPort":"T"},
+          {"from":0, "to":4, "fromPort":"B", "toPort":"T"}
+        ]}
+        </textarea>
+        <p>Click the button below to render the current GoJS Diagram into SVG at one-half scale.
+           The SVG is not interactive like the GoJS diagram, but can be used for printing or display.
+           For more information, see the page on <a href="../intro/makingSVG.html">making SVG</a>.</p>
+        <button onclick="makeSVG()">Render as SVG</button>
+        <div id="SVGArea"></div>
     </section>
 
   </template>
@@ -97,5 +91,3 @@
       is: 'stage-flowcharts'
     })
   </script>
-
-</dom-module>
