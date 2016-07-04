@@ -23,6 +23,7 @@
         border-radius: 5px;
         display: flex;
         margin: 3px;
+        position: relative;
       }
       .keyword-container {
         background-color: #3162a3;
@@ -32,6 +33,7 @@
         padding: 10px;
       }
       .keyword-icon {
+        cursor: pointer;
         display: inline-block;
         height: 20px;
         width: 20px;
@@ -61,35 +63,39 @@
     </style>
 
     <h2>Paper Title</h2>
-    <p>Provide a title for your work, do not worry, it can be modified at any time. Try to keep it short while avoid being too general.</p>
+    <p>Provide a title for your work. Try to keep it short and avoid being to general. Do not worry, it can be modified at any time.</p>
     <div class="text-area-container">
       <paper-textarea class="text-input" value="A Basic Territorial Coherence Index in Support for Inter-Communal Co-operation. A Working Hypothesis" char-counter no-label-float max-rows="2"></paper-texarea>
     </div>
 
     <h2>Research Idea</h2>
-    <p>Try to describe your starting idea in a short, concise maner.
+    <p>Try to describe your starting idea in a short, concise manner.
     <div class="text-area-container">
       <paper-textarea class="text-input" value="The aim of this paper is to construct a simple territorial coherence index based on minimal population and geographical data. Essentially, the index works with demographic masses and distances between rural settlements and the nearest urban centre. The reasons for such an exercise are not very hard to find: first, ‘gravitational’ indices lend themselves well enough to grasping the structure of the urban hinterland, thereby making them valuable for the study of peri-urban areas. And second, because they can inform planners about possible market or commuting areas, which, in turn, can help calibrate public service provision." char-counter no-label-float max-rows="5"></paper-texarea>
     </div>
 
     <h2>Keywords</h2>
-    <p>Please use keywords to provide information about your work for search and index purposes.</p>
+    <p>Please use keywords to provide information about your work for searching and indexing purposes.</p>
     <div class="keyword-container">
       <div class="keyword">
         <div class="keyword-text">territorial cohesion index</div>
         <iron-icon class="keyword-icon" icon="close"></iron-icon>
+        <paper-ripple></paper-ripple>
       </div>
       <div class="keyword">
         <div class="keyword-text">inter-communality</div>
         <iron-icon class="keyword-icon" icon="close"></iron-icon>
+        <paper-ripple></paper-ripple>
       </div>
       <div class="keyword">
         <div class="keyword-text">public service provision</div>
         <iron-icon class="keyword-icon" icon="close"></iron-icon>
+        <paper-ripple></paper-ripple>
       </div>
       <div class="keyword">
         <div class="keyword-text">peri-urban areas</div>
         <iron-icon class="keyword-icon" icon="close"></iron-icon>
+        <paper-ripple></paper-ripple>
       </div>
     </div>
 

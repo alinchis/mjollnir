@@ -1,4 +1,7 @@
 <link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="visualization-sources.html">
+<link rel="import" href="visualization-workarea.html">
+<link rel="import" href="visualization-layers.html">
 
 <dom-module id="stage-visualization">
 
@@ -7,30 +10,28 @@
     <style>
       :host {
         display: flex;
-        flex-direction: row;
-        border: 2px solid coral;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: row;
+	      flex-direction: row;
       }
       .sources {
-        border: 1px solid white;
         flex: 0;
         min-width: 160px;
       }
       .workarea {
-        border: 1px solid orange;
         flex: 1;
         min-width: 400px;
       }
-      .tools {
-        border: 1px solid magenta;
+      .layers {
         flex: 0;
         min-width: 200px;
       }
 
     </style>
 
-    <section class="sources"></section>
-    <section class="workarea"></section>
-    <section class="tools"></section>
+    <visualization-sources class="sources"></visualization-sources>
+    <visualization-workarea class="workarea"></visualization-workarea>
+    <visualization-layers class="layers"></visualization-layers>
 
 
   </template>

@@ -10,6 +10,7 @@
 <link rel="import" href="stage-imports.html">
 <link rel="import" href="stage-exploration.html">
 <link rel="import" href="stage-processing.html">
+<link rel="import" href="stage-flowcharts.html">
 <link rel="import" href="stage-visualization.html">
 <link rel="import" href="stage-writing.html">
 <link rel="import" href="stage-sharing.html">
@@ -27,6 +28,7 @@
       }
       .stage-bar {
         background-color: rgb(40, 40, 40);
+        border-right: 1px solid rgb(50, 50, 50);
         border-top: 1px solid rgb(50, 50, 50);
         display: flex;
         display: -webkit-flex; /* Safari */
@@ -63,6 +65,7 @@
         margin-top: 0px;
         min-height: 40px;
         padding: 0px;
+        position: relative;
       }
       .stage-tab.iron-selected {
         background-color: rgb(55, 55, 55);
@@ -82,15 +85,42 @@
 
     <section class="stage-bar">
       <iron-selector class="stage-tabs" selected="{{selected}}">
-        <div class="stage-tab"><iron-icon class="tab-icon" icon="lightbulb-outline" title="research questions"></iron-icon></div>
-        <div class="stage-tab"><iron-icon class="tab-icon" icon="search" title="ideal dataset"></iron-icon></div>
-        <div class="stage-tab"><iron-icon class="tab-icon" icon="file-download" title="data aquisition"></iron-icon></div>
-        <div class="stage-tab"><iron-icon class="tab-icon" icon="add-box" title="data import"></iron-icon></div>
-        <div class="stage-tab"><iron-icon class="tab-icon" icon="explore" title="data exploration and analysis"></iron-icon></div>
-        <div class="stage-tab"><iron-icon class="tab-icon" icon="build" title="data processing"></iron-icon></div>
-        <div class="stage-tab"><iron-icon class="tab-icon" icon="extension" title="data visualization"></iron-icon></div>
-        <div class="stage-tab"><iron-icon class="tab-icon" icon="account-balance" title="text processor"></iron-icon></div>
-        <div class="stage-tab"><iron-icon class="tab-icon" icon="social:share" title="share"></iron-icon></div>
+        <div class="stage-tab">
+          <iron-icon class="tab-icon" icon="lightbulb-outline" title="research questions"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
+        <div class="stage-tab">
+          <iron-icon class="tab-icon" icon="search" title="ideal dataset"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
+        <div class="stage-tab">
+          <iron-icon class="tab-icon" icon="file-download" title="data aquisition"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
+        <div class="stage-tab">
+          <iron-icon class="tab-icon" icon="add-box" title="data import"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
+        <div class="stage-tab">
+          <iron-icon class="tab-icon" icon="explore" title="data exploration and analysis"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
+        <div class="stage-tab">
+          <iron-icon class="tab-icon" icon="build" title="data processing"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
+        <div class="stage-tab">
+          <iron-icon class="tab-icon" icon="extension" title="data visualization"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
+        <div class="stage-tab">
+          <iron-icon class="tab-icon" icon="account-balance" title="text processor"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
+        <div class="stage-tab">
+          <iron-icon class="tab-icon" icon="social:share" title="share"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>
       </iron-selector>
       <footer class="stage-footer">
         <paper-icon-button class="stage-footer-button" icon="settings" title="settings"></paper-icon-button>
@@ -103,7 +133,7 @@
       <stage-aquisitions class="stage-view">3</stage-aquisitions>
       <stage-import class="stage-view">4</stage-import>
       <stage-exploration class="stage-view">5</stage-exploration>
-      <stage-processing class="stage-view">6</stage-processing>
+      <stage-flowcharts class="stage-view">6</stage-flowcharts>
       <stage-visualization class="stage-view">7</stage-visualization>
       <stage-writing class="stage-view">8</stage-writing>
       <stage-sharing class="stage-view">9</stage-sharing>
@@ -119,7 +149,7 @@
       properties: {
         selected: {
           type: Number,
-          value: 0
+          value: 6
         }
       }
     })
