@@ -2,7 +2,7 @@
 <link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
 
-<dom-module id="sources-objects">
+<dom-module id="processing-properties">
 
   <template>
 
@@ -28,10 +28,6 @@
         background: rgb(250, 250, 250);
       }
       .list {
-        display: flex;
-        display: -webkit-flex; /* Safari */
-        -webkit-flex-direction: column;
-	      flex-direction: column;
         background-color: rgb(200, 200, 200);
         color: black;
         cursor: pointer;
@@ -55,23 +51,14 @@
 
     </style>
 
-    <section class="title">visual objects</section>
+    <section class="title">properties</section>
     <section class="buttons">
       <iron-icon class="tab-icon" icon="add-circle" title="create"></iron-icon>
       <iron-icon class="tab-icon" icon="remove-circle" title="remove"></iron-icon>
       <iron-icon class="tab-icon" icon="create" title="edit"></iron-icon>
       <iron-icon class="tab-icon" icon="move-to-inbox" title="apply changes"></iron-icon>
     </section>
-    <iron-selector class="list">
-      <div class="list-item">legend</div>
-      <div class="list-item">vector graphics</div>
-      <div class="list-item">source</div>
-      <div class="list-item">scale</div>
-      <div class="list-item">chart</div>
-      <div class="list-item">points</div>
-      <div class="list-item">graph</div>
-      <div class="list-item">map</div>
-    </iron-selector>
+    <iron-selector class="list"></iron-selector>
 
   </template>
 
@@ -79,7 +66,7 @@
 
     Polymer({
 
-      is: 'sources-objects'
+      is: 'processing-properties'
     })
 
   </script>

@@ -1,0 +1,84 @@
+<link rel="import" href="../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/paper-material/paper-material.html">
+
+<dom-module id="processing-workarea">
+
+  <template>
+
+    <style>
+      :host {
+        align-content: space-between;
+        border-left: 1px solid rgb(50, 50, 50);
+        border-right: 1px solid rgb(50, 50, 50);
+        border-top: 1px solid rgb(50, 50, 50);
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        justify-content: space-between;
+      }
+      .workarea-diagram {
+        align-items: center;
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: column;
+	      flex-direction: column;
+        flex-grow: 1;
+        height: 0px;
+        justify-content: center;
+        overflow: auto;
+      }
+      .workarea-diagram > img {
+        width: 1150px;
+      }
+      .page {
+        background-color: white;
+        cursor: text;
+        height: 1053px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 744px;
+      }
+      .landscape {
+        height: 707px;
+        width: 1000px;
+      }
+      .workarea-footer {
+        background-color: rgb(35, 35, 35);
+        border-top: 1px solid rgb(50, 50, 50);
+        height: 20px;
+        padding-left: 10px;
+      }
+      .workarea-footer-button {
+        width: 16px;
+        height: 16px;
+        padding: 0px;
+        margin-left, margin-right: 12px;
+        margin-top, margin-bottom: 6px;
+      }
+
+    </style>
+
+<!--    <object class="workarea-text" data="http://mjollnir-sws.ro/page_assets/article.pdf" title="article"></object> -->
+    <div class="workarea-diagram">
+      <img src="http://mjollnir-sws.ro/page_assets/processing/processing2.png" alt="processing diagram">
+    </div>
+    <footer class="workarea-footer">
+      <paper-icon-button class="workarea-footer-button" icon="settings" title="settings"></paper-icon-button>
+    </footer>
+
+
+  </template>
+
+  <script>
+
+    Polymer({
+
+      is: 'processing-workarea'
+    })
+
+  </script>
+
+</dom-module>
