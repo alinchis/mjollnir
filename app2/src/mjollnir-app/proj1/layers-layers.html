@@ -35,8 +35,18 @@
         padding: 5px;
       }
       .list-item {
+        display: flex;
+        display: -webkit-flex; /* Safari */
+        -webkit-flex-direction: row;
+	      flex-direction: row;
         font-size: 0.7em;
         padding: 2px;
+      }
+      .list-item > iron-icon {
+        --iron-icon-fill-color: rgb(40, 40, 40);
+        height: 12px;
+        width: 12px;
+        padding-right: 5px;
       }
       .tab-icon {
         --iron-icon-fill-color: rgb(200, 200, 200);
@@ -56,9 +66,50 @@
       <iron-icon class="tab-icon" icon="add-circle" title="create"></iron-icon>
       <iron-icon class="tab-icon" icon="remove-circle" title="remove"></iron-icon>
       <iron-icon class="tab-icon" icon="create" title="edit"></iron-icon>
-      <iron-icon class="tab-icon" icon="move-to-inbox" title="apply changes"></iron-icon>
+      <iron-icon class="tab-icon" icon="lock" title="lock"></iron-icon>
     </section>
-    <iron-selector class="list"></iron-selector>
+    <iron-selector class="list">
+      <div class="list-item">
+        <iron-icon icon="radio-button-checked" title="toggle visible"></iron-icon>
+        <div class="item-text">[legend] map legend</div>
+      </div>
+      <div class="list-item">
+        <iron-icon icon="radio-button-checked" title="toggle visible"></iron-icon>
+        <div class="item-text">[graphic] north indicator</div>
+      </div>
+      <div class="list-item">
+        <iron-icon icon="radio-button-checked" title="toggle visible"></iron-icon>
+        <div class="item-text">[source] composit source</div>
+      </div>
+      <div class="list-item">
+        <iron-icon icon="radio-button-checked" title="toggle visible"></iron-icon>
+        <div class="item-text">[scale] map scale</div>
+      </div>
+      <div class="list-item">
+        <iron-icon icon="radio-button-checked" title="toggle visible"></iron-icon>
+        <div class="item-text">[points] new cities</div>
+      </div>
+      <div class="list-item">
+        <iron-icon icon="radio-button-checked" title="toggle visible"></iron-icon>
+        <div class="item-text">[points] cities</div>
+      </div>
+      <div class="list-item">
+        <iron-icon icon="radio-button-checked" title="toggle visible"></iron-icon>
+        <div class="item-text">[points] min time</div>
+      </div>
+      <div class="list-item">
+        <iron-icon icon="radio-button-checked" title="toggle visible"></iron-icon>
+        <div class="item-text">[map] clc 2000 water</div>
+      </div>
+      <div class="list-item">
+        <iron-icon icon="radio-button-checked" title="toggle visible"></iron-icon>
+        <div class="item-text">[map] map</div>
+      </div>
+      <div class="list-item">
+        <iron-icon icon="radio-button-checked" title="toggle visible"></iron-icon>
+        <div class="item-text">[fill] background</div>
+      </div>
+    </iron-selector>
 
   </template>
 
