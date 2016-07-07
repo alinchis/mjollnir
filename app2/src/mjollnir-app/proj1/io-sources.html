@@ -2,7 +2,7 @@
 <link rel="import" href="../../../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../../../bower_components/iron-selector/iron-selector.html">
 
-<dom-module id="sources-data">
+<dom-module id="io-sources">
 
   <template>
 
@@ -27,6 +27,12 @@
       .iron-selected {
         background: rgb(250, 250, 250);
       }
+      .item-db {
+
+      }
+      .item-location {
+        width: 50px;
+      }
       .list {
         background-color: rgb(200, 200, 200);
         color: black;
@@ -35,6 +41,7 @@
         padding: 5px;
       }
       .list-item {
+        display: flex;
         font-size: 0.7em;
         padding: 2px;
       }
@@ -51,17 +58,21 @@
 
     </style>
 
-    <section class="title">project dataset</section>
+    <section class="title">data sources</section>
     <section class="buttons">
       <iron-icon class="tab-icon" icon="add-circle" title="create"></iron-icon>
       <iron-icon class="tab-icon" icon="remove-circle" title="remove"></iron-icon>
       <iron-icon class="tab-icon" icon="create" title="edit"></iron-icon>
-      <iron-icon class="tab-icon" icon="move-to-inbox" title="apply changes"></iron-icon>
     </section>
     <iron-selector class="list">
-      <div>population</div>
-      <div>space-distance</div>
-      <div>time-distance</div>
+      <div class="list-item">
+        <div class="item-location">[local]</div>
+        <div class="item-db">default db</div>
+      </div>
+      <div class="list-item">
+        <div class="item-location">[remote]</div>
+        <div class="item-db">mjollnir online</div>
+      </div>
     </iron-selector>
 
   </template>
@@ -70,7 +81,7 @@
 
     Polymer({
 
-      is: 'sources-data'
+      is: 'io-sources'
     })
 
   </script>
