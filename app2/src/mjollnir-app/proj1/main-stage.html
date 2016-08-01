@@ -7,13 +7,12 @@
 <link rel="import" href="stage-questions.html">
 <link rel="import" href="stage-dataset.html">
 <link rel="import" href="stage-acquisitions.html">
-<link rel="import" href="stage-imports.html">
-<link rel="import" href="stage-exploration.html">
+<!--<link rel="import" href="stage-exploration.html">-->
 <link rel="import" href="stage-processing.html">
 <link rel="import" href="stage-flowcharts.html">
 <link rel="import" href="stage-visualization.html">
 <link rel="import" href="stage-writing.html">
-<link rel="import" href="stage-sharing.html">
+<!--<link rel="import" href="stage-sharing.html">-->
 
 <dom-module id="main-stage">
 
@@ -98,17 +97,13 @@
           <paper-ripple></paper-ripple>
         </div>
         <div class="stage-tab">
-          <iron-icon class="tab-icon" icon="add-box" title="data import"></iron-icon>
-          <paper-ripple></paper-ripple>
-        </div>
-        <div class="stage-tab">
-          <iron-icon class="tab-icon" icon="explore" title="data exploration and analysis"></iron-icon>
-          <paper-ripple></paper-ripple>
-        </div>
-        <div class="stage-tab">
           <iron-icon class="tab-icon" icon="build" title="data processing"></iron-icon>
           <paper-ripple></paper-ripple>
         </div>
+<!--        <div class="stage-tab">
+          <iron-icon class="tab-icon" icon="explore" title="data exploration and analysis"></iron-icon>
+          <paper-ripple></paper-ripple>
+        </div>-->
         <div class="stage-tab">
           <iron-icon class="tab-icon" icon="extension" title="data visualization"></iron-icon>
           <paper-ripple></paper-ripple>
@@ -117,10 +112,10 @@
           <iron-icon class="tab-icon" icon="account-balance" title="text processor"></iron-icon>
           <paper-ripple></paper-ripple>
         </div>
-        <div class="stage-tab">
+<!--        <div class="stage-tab">
           <iron-icon class="tab-icon" icon="social:share" title="share"></iron-icon>
           <paper-ripple></paper-ripple>
-        </div>
+        </div>-->
       </iron-selector>
       <footer class="stage-footer">
         <paper-icon-button class="stage-footer-button" icon="settings" title="settings"></paper-icon-button>
@@ -131,12 +126,11 @@
       <stage-questions class="stage-view">1</stage-questions>
       <stage-dataset class="stage-view">2</stage-dataset>
       <stage-acquisitions class="stage-view">3</stage-acquisitions>
-      <stage-import class="stage-view">4</stage-import>
-      <stage-exploration class="stage-view">5</stage-exploration>
       <stage-processing class="stage-view">6</stage-processing>
+<!--      <stage-exploration class="stage-view">5</stage-exploration>-->
       <stage-visualization class="stage-view">7</stage-visualization>
       <stage-writing class="stage-view">8</stage-writing>
-      <stage-sharing class="stage-view">9</stage-sharing>
+<!--      <stage-sharing class="stage-view">9</stage-sharing>-->
     </iron-pages>
 
   </template>
@@ -149,7 +143,7 @@
       properties: {
         selected: {
           type: Number,
-          value: 2
+          value: 0
         }
       }
     })
